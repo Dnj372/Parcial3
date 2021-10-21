@@ -55,7 +55,7 @@ class _inicioState extends State<inicio> {
     CollectionReference collectionReference =
         FirebaseFirestore.instance.collection("Capitanes");
 
-    QuerySnapshot cap = await collectionReference.get();
+    final QuerySnapshot cap = await collectionReference.get();
 
     if (cap.docs.length != 0) {
       for (var doc in cap.docs) {
@@ -93,7 +93,7 @@ class _inicioState extends State<inicio> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text('Entrenador: ' + ii),
+                  Text('Capitanes: ' + ii),
                   Icon(Icons.logout),
                 ]),
           ),
